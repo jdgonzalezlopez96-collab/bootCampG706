@@ -11,7 +11,8 @@
 `git config --global user.name "Jhon Daniel Gonzalez Lopez"` -> Configurarle el nombre  
 `git remote add origin https://github.com/jdgonzalezlopez96-collab/bootCampG706.git` -> Agrego la ruta origen del repositorio git mío  
 `git push -u origin master` -> Le envío o empujo los cambios que yo tengo local en mi equipo al repositorio de github  
-`git clone https://github.com/fernandogallegoh75/BootCampProfesG706.git` -> Para clonar un repositorio (en este caso me clonpe el de los profes)  
+`git clone https://github.com/fernandogallegoh75/BootCampProfesG706.git` -> Para clonar un repositorio (en este caso me clonpe el de los profes) 
+``git remote -v`` -> verificar la ruta del github a la que se está apuntando
 
 `Set-ExecutionPolicy Unrestricted` -> Se debe ejecutar dentro del powershell como administrador y sirve para habilitar ejecución de comandos
 
