@@ -24,3 +24,9 @@
 ``env312\Scripts\activate`` -> Activar el entorno virtual de python.  
 ``deactivate` `-> desactiva el entorno virtual de python cuando no se va a utilizar.  
 ``pip list`` -> Permite ver las librerías que tiene python.
+## Librerias para python
+``python.exe -m pip install --upgrade pip`` -> Actualiza el pip
+``pip install pandas numpy matplolib`` ->
+``pandas`` -> Manejo de datos ``pip install pandas``
+``numpy`` -> cálculo matemático ``pip install numpy``
+``matplolib`` -> gráficos ``pip install matplolib``
