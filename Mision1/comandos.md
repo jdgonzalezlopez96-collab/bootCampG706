@@ -20,6 +20,9 @@
 
 `dir` -> consultar el directorio donde estoy ubicado y el directorio próximo
 
+``alt + shift + a`` -> comentario en bloque para HTML
+``alt + flechita arriba o abajo`` -> Para subir o bajar de posición algo que se aya escrito parándose al final de la línea
+
 `python --version` -> Consultar versión de python.  
 `python -m venv env312` -> crear un entorno virtual en python.  
 ``env312\Scripts\activate`` -> Activar el entorno virtual de python.  
