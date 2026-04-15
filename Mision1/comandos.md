@@ -22,6 +22,9 @@
 
 ``alt + shift + a`` -> comentario en bloque para HTML
 ``alt + flechita arriba o abajo`` -> Para subir o bajar de posición algo que se aya escrito parándose al final de la línea
+``alt + shift + flecha arriba o abajo`` -> copia un bloque de codigo seleccionado abajo o arriba
+``alt + flecha arriba o abajo`` -> mueve un bloque de código hacia arriba respetando la identación
+``shift + alt + f`` -> Para formatear o identar el código seleccionado
 
 `python --version` -> Consultar versión de python.  
 `python -m venv env312` -> crear un entorno virtual en python.  

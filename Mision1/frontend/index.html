@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
     <title>Mi primera web</title>
 </head>
+
 <body>
     <h1>Hola Mundo 👌</h1>
     <h2>Etiqueta h2 😁</h2>
@@ -12,7 +21,7 @@
     <h4>Etiqueta h4 😂</h4>
     <h5>Etiqueta h5 👍</h5>
     <h6>Etiqueta h6 📝</h6>
-    
+
     <!--
     Alt + shif + a -> Para crear comentarios 
     windows + . -> emoyis
@@ -23,28 +32,84 @@
     <hr>
 
     <!-- Lista ordenada -->
-     <h2>Lista ordenada</h2>
-     <ol>
-         <li>Arroz</li>
+    <h2>Lista ordenada</h2>
+    <ol>
+        <li>Arroz</li>
         <li>Carne</li>
         <li>Cafe</li>
-     </ol>
+    </ol>
 
-     <!-- Lista desordenada -->
-     <h2>Lista desordenada</h2>
-     <ul>
-         <li>Arroz</li>
+    <!-- Lista desordenada -->
+    <h2>Lista desordenada</h2>
+    <ul>
+        <li>Arroz</li>
         <li>Carne</li>
         <li>Cafe</li>
-     </ul>
+    </ul>
 
-     <!-- Enlaces a otras páginas -->
-      <a href="http://youtube.com" target="_blank">Ir a youtube</a>
+    <!-- Enlaces a otras páginas -->
+    <a href="http://youtube.com" target="_blank">Ir a youtube</a>
 
-      <br>
-      <!-- imagenes -->
-       <img src="img/1.jpeg" alt="Gato">
-       <br>
-       <img src="img/1.jpeg" alt="Gato" style=" max-width: 40%; height: auto;">
+    <br>
+    <!-- imagenes -->
+    <img src="img/1.jpeg" alt="Gato">
+    <br>
+    <img src="img/1.jpeg" alt="Gato" style=" max-width: 40%; height: auto;">
+    <br>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Lugar de Nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Daniel</td>
+                <td>30</td>
+                <td>Manizales</td>
+            </tr>
+            <tr>
+                <td>Daniel</td>
+                <td>30</td>
+                <td>Manizales</td>
+            </tr>
+            <tr>
+                <td>Daniel</td>
+                <td>30</td>
+                <td>Manizales</td>
+            </tr>
+            <tr>
+                <td>Daniel</td>
+                <td>30</td>
+                <td>Manizales</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>total</td>
+                <td>total</td>
+                <td>total</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <!-- Formulario -->
+    <h3>Formulario de ingreso</h3>
+    <form action="">
+        <label for="">Nombre:</label>
+        <input type="text">
+        <label for="">Contraseña:</label>
+        <input type="password">
+        <label for="">Fecha de Nacimiento:</label>
+        <input type="date"> <!-- fecha -->
+        <input type="datetime-local"> <!-- Fecha y hora -->
+        <input type="number">
+        <input type="">
+        <button>Enviar</button>
+    </form>
 </body>
+
 </html>
