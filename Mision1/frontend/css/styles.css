@@ -9,3 +9,8 @@ body{
 .estilo_h1_v2{
     color: blueviolet;
 }
+
+.mi_imagen{
+    border-radius: 8px;
+    box-shadow: 25px 25px 20px rgba(0, 0, 0, 0.6);
+}
