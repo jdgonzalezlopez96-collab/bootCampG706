@@ -37,3 +37,11 @@
 ``pandas`` -> Manejo de datos ``pip install pandas``
 ``numpy`` -> cálculo matemático ``pip install numpy``
 ``matplolib`` -> gráficos ``pip install matplolib``
+
+``pip freeze > requirements.txt`` -> Sacar lista de versiones con la que se construyó la aplicación en python
+
+## En caso que se vaya a clonar el proyecto desde el github en cualquier otro equipo y que este a su vez funcione correctamente con las versiones de las librerías correspondioentes al proyecto con las que se construyó.
+`python -m venv env312` -> creamos el entorno virtual en python dentro del directorio Mision2.
+``env312\Scripts\activate``  -> Activar el entorno virtual de python dentro del directorio Mision2.
+``pip freeze > requirements.txt`` -> Se crea archivo requirements para sacar lista de versiones con la que se construyó la aplicación en python dentro del directorio Mision2/chatv1
+``pip install -r requirements.txt`` -> Se instala todas las librerías que componen al proyecto hecho en python
