@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Inteligente</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e5ddd5;
+            /* Color clásico de fondo de chat */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #chatbot {
+            background: white;
+            width: 450px;
+            height: 80vh;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Área de mensajes */
+        #chat-box {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-image: url('https://githubusercontent.com');
+            /* Fondo opcional */
+        }
+
+        /* Burbujas base */
+        .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        /* Estilo Burbuja Usuario */
+        .user-message {
+            align-self: flex-end;
+            background-color: #dcf8c6;
+            color: #303030;
+            border-bottom-right-radius: 2px;
+        }
+
+        /* Estilo Burbuja Bot */
+        .bot-message {
+            align-self: flex-start;
+            background-color: #ffffff;
+            color: #303030;
+            border-bottom-left-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contenedor de input */
+        .input-area {
+            padding: 15px;
+            background: #f0f0f0;
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        button {
+            background: #075e54;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #128c7e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chatbot">
+        <div id="chat-box">
+            <!-- Los mensajes aparecerán aquí -->
+            <div class="message bot-message">¡Hola! 🤖 ¿En qué puedo ayudarte hoy?</div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." onkeypress="handleKeyPress(event)">
+            <button onclick="enviarMensaje()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para enviar con la tecla Enter
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') enviarMensaje();
+        }
+
+        async function enviarMensaje() {
+            const input = document.getElementById('user-input');
+            const box = document.getElementById('chat-box');
+            const mensaje = input.value.trim();
+
+            if (!mensaje) return;
+
+            // 1. Agregar burbuja del usuario
+            box.innerHTML += `<div class="message user-message">${mensaje}</div>`;
+            input.value = '';
+
+            // Auto-scroll después de que el usuario escribe
+            scrollChat();
+
+            try {
+                // 2. Llamada a Python (main.py)
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mensaje: mensaje })
+                });
+
+                const data = await response.json();
+
+                // 3. Agregar burbuja del bot
+                box.innerHTML += `<div class="message bot-message">${data.respuesta}</div>`;
+
+                // Auto-scroll después de la respuesta del bot
+                scrollChat();
+            } catch (error) {
+                console.error("Error:", error);
+                box.innerHTML += `<div class="message bot-message">⚠️ Error al conectar con el servidor.</div>`;
+            }
+        }
+
+        // Función de Auto-scroll
+        function scrollChat() {
+            const box = document.getElementById('chat-box');
+            box.scrollTo({
+                top: box.scrollHeight,
+                behavior: 'smooth' // Desplazamiento suave
+            });
+        }
+    </script>
+</body>
+
+</html>
