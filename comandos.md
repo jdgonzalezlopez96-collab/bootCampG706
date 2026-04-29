@@ -33,7 +33,8 @@
 ``pip list`` -> Permite ver las librerías que tiene python.
 ## Librerias para python
 ``python.exe -m pip install --upgrade pip`` -> Actualiza el pip
-``pip install pandas numpy matplolib`` ->
+``pip install pandas numpy matplolib`` -> instala las librerías pandas, numpy, matplotlib, pero solo instalando la de pandas incluye las demás
+``pip install scikit-learn`` -> instala la librería sklearn
 ``pandas`` -> Manejo de datos ``pip install pandas``
 ``numpy`` -> cálculo matemático ``pip install numpy``
 ``matplolib`` -> gráficos ``pip install matplolib``
