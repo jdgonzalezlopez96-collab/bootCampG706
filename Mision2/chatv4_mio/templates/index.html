@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot Inteligente</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: wheat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #chatbot {
-            background: white;
-            width: 400px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
+    <!-- Vinculamos el CSS desde la carpeta static -->
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
-
 <body>
     <div id="chatbot">
-        <div id="chat-box" style="height: 300px; overflow-y: auto; margin-bottom: 10px; border-bottom: 1px solid #ccc;">
-            <!-- Aquí aparecerán los mensajes -->
+        <div id="chat-box">
+            <div class="message bot-message">¡Hola! 🤖 Escribe algo para comenzar.</div>
         </div>
-        <input type="text" id="user-input" placeholder="Escribe un mensaje..." style="width: 93%; padding: 10px;">
-        <button onclick="enviarMensaje()" style="margin-top: 5px;">Enviar</button>
+        
+        <!-- Indicador de escribiendo (oculto por defecto) -->
+        <div id="typing-indicator" style="display: none; padding: 0 20px;" class="typing">El bot está escribiendo...</div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." onkeypress="handleKeyPress(event)">
+            <button onclick="enviarMensaje()">Enviar</button>
+        </div>
     </div>
 
     <script>
+        function handleKeyPress(e) { if (e.key === 'Enter') enviarMensaje(); }
+
         async function enviarMensaje() {
             const input = document.getElementById('user-input');
             const box = document.getElementById('chat-box');
-            const mensaje = input.value;
+            const typing = document.getElementById('typing-indicator');
+            const mensaje = input.value.trim();
+            
             if (!mensaje) return;
 
-            // Mostrar mensaje del usuario en el div
-            box.innerHTML += `<div><b>Tú:</b> ${mensaje}</div>`;
+            // 1. Agregar burbuja del usuario, Usuario escribe 
+            box.innerHTML += `<div class="message user-message">${mensaje}</div>`;
             input.value = '';
 
-            // Petición a Python (main.py)
-            const response = await fetch('/ask', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ mensaje: mensaje })
-            });
+            // Auto-scroll después de que el usuario escribe
+            scrollChat();
 
-            const data = await response.json();
+            // 2. Mostrar "Escribiendo..."
+            typing.style.display = 'block';
+            scrollChat();
 
-            // Mostrar respuesta del bot
-            box.innerHTML += `<div><b>Bot:</b> ${data.respuesta}</div>`;
-            box.scrollTop = box.scrollHeight;
+            try {
+                // 2. Llamada a Python (main.py)
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mensaje: mensaje })
+                });
+                const data = await response.json();
+                
+                // 3. Ocultar "Escribiendo..." Agregar burbuja del bot y mostrar respuesta
+                typing.style.display = 'none';
+                box.innerHTML += `<div class="message bot-message">${data.respuesta}</div>`;
+
+                // Auto-scroll después de la respuesta del bot
+                scrollChat();
+            } catch (error) {
+                console.error("Error:", error);
+                typing.style.display = 'none';
+                box.innerHTML += `<div class="message bot-message">⚠️ Error al conectar con el servidor.</div>`;
+            }
+        }
+
+        // Función de Auto-scroll
+        function scrollChat() {
+            const box = document.getElementById('chat-box');
+            box.scrollTo({ top: box.scrollHeight, behavior: 'smooth' });
         }
     </script>
 </body>
-
 </html>
