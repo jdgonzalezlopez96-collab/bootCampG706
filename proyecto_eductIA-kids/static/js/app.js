@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
         chatWrapper.style.display = "flex";
         
         // Mensaje de bienvenida automático con opciones
-        const welcomeText = "¡Hola! ¿Qué quieres aprender hoy? 😊 Escribe el número:<br>1. Matemáticas Básicas<br>2. Inglés básico<br>3. Educación física y deporte";
+        const welcomeText = "¡Hola! ¿Qué quieres aprender hoy? 😊 Escribe el número:<br>1. Matemáticas Básicas<br>2. Inglés básico<br>3. Educación física y deporte<br>4. Español<br>5. ética y valores<br>6. Programación Básica";
         appendBotMessage(welcomeText);
     }, 4000);
 });
