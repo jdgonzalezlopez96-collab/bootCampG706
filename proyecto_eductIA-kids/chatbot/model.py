@@ -13,7 +13,10 @@ def build_and_train_model(train_pairs):
     questions = [q for q, _ in train_pairs] # Lista de preguntas
     answers = [a for _, a in train_pairs] # Lista de respuestas
     # Creamos el vectorizador, que traducirá el texto a números
-    vectorizer = CountVectorizer()
+
+    #vectorizer = CountVectorizer()
+    vectorizer = CountVectorizer(token_pattern=r"(?u)\b\w+\b") # Esto permite que reconozca palabras de un solo carácter como "1"
+    
     # Entrenamos el vectorizados con las preguntas y las respuesta
     # Convertimos en números (Transformamos las preguntas en un vector)
     x = vectorizer.fit_transform(questions)
