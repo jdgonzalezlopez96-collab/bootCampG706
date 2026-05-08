@@ -1,65 +1,124 @@
 {% extends "base.html" %}
 
-{% block title %}Inicio - EcoEnergía{% endblock %}
+{% block title %}Inicio - EducatIA kids{% endblock %}
 
 {% block content %}
+
+
+<!-- CAROUSEL -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide  mt-4 mb-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img src="../static/img/interactivo1.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p> -->
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="../static/img/interactivo2.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p> -->
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="../static/img/interactivo3.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p> -->
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="../static/img/interactivo5.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>fourth slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p> -->
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1> 👨‍🏫👩‍🏫🎓 EducatIA KIDS 👨‍🏫👩‍🏫🎓 </h1>
+    <h1> 👨‍🏫👩‍🏫🎓 EducatIA kids 👨‍🏫👩‍🏫🎓 </h1>
     <p>Desarrollamos y aplicamos el aprendizaje que tú niño/a necesita.</p>
     <a href="/aprendizaje" class="btn">Explora tú aprendizaje</a>
   </div>
 
-  <div class="hero-img">
+  <!-- <div class="hero-img">
     <img src="{{ url_for('static', filename='img/energia.jpeg') }}">
-  </div>
+  </div> -->
 </section>
 
 <!-- SERVICIOS -->
 <section class="cards">
-  <h2>🎓 Tipos de Aprendizaje</h2>
+  <h2>🎓 Módulos de Aprendizaje </h2>
 
-  <div class="card-container">
-
+  <div class="card-container row row-cols-1 row-cols-md-3 g-6">
+    <!--  <div class="row row-cols-1 row-cols-md-3 g-6"> -->
     <div class="card">
-      <img src="{{ url_for('static', filename='img/matematicas.jpeg') }}">
-      <h3>Matemáticas Básicas</h3>
-      <p> Aprende sobre números, operaciones aritméticas y problemas matemáticos sencillos de forma fácil, autónoma y didáctica, mirando, escribiendo, precticando y jugando.</p>
+      <img src="{{ url_for('static', filename='img/matematicas.png') }}">
+      <h3>➕➖✖➗ Matemáticas Básicas </h3>
+      <p><b>Aprende de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando sobre:</b></p>
+      <ul>
+        <li>números</li>
+        <li>operaciones aritméticas</li>
+        <li>problemas matemáticos sencillos de forma fácil</li>
+      </ul>
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='img/ingles.jpeg') }}">
+      <img src="{{ url_for('static', filename='img/ingles.png') }}">
       <h3>Inglés básico</h3>
       <p>Aprende de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando sobre:</p>
       <ul>
         <li><b>Vocabulario Básico:</b>
-          Los colores (colors), números (numbers), días de la semana (days of the week), meses del año (months of the year) y formas geométricas.
+          Los colores (colors), números (numbers), días de la semana (days of the week), meses del año (months of the
+          year) y formas geométricas.
         </li>
-        <li><b>Gramática básica e inicial:</b>  
-          Verbo to be (ser/estar), have got (tener), pronombres personales (I, you, he, she), adjetivos posesivos y preguntas Wh- (Who, what, where).
+        <li><b>Gramática básica e inicial:</b>
+          Verbo to be (ser/estar), have got (tener), pronombres personales (I, you, he, she), adjetivos posesivos y
+          preguntas Wh- (Who, what, where).
         </li>
         <li><b>Identidad y Familia</b>
-          Presentación personal ("My name is..."),la familia (mother, father, siblings), 
+          Presentación personal ("My name is..."),la familia (mother, father, siblings),
           y descripciones físicas o de personalidad (young, old, happy)
         </li>
         <li><b>Entorno Cercano</b>
           Partes de la casa (kitchen, bedroom), objetos escolares (school supplies) y lugares de la ciudad.
         </li>
         <li><b>Naturaleza y Animales:</b>
-          Animales de la granja (farm animals) y salvajes (wild animals), estaciones del año (seasons) y el clima (weather).
+          Animales de la granja (farm animals) y salvajes (wild animals), estaciones del año (seasons) y el clima
+          (weather).
         </li>
         <li><b>Acciones y Vida Diaria:</b>
           Rutinas diarias, profesiones, la hora, deportes y gustos (food, toys).
         </li>
-      </ul>  
+      </ul>
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='img/español.jpeg') }}">
+      <img src="{{ url_for('static', filename='img/español.png') }}">
       <h3>Español</h3>
-      <p>Aprende Lenguaje, Lengua y Habla de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando sobre la metodología o enfoque HELE:</p>
+      <p>Aprende Lenguaje, Lengua y Habla de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando
+        sobre la metodología o enfoque HELE:</p>
       <ul>
         <li><b>H - Hablar:</b>
           Expresar ideas, sentimientos y conocimientos oralmente.
@@ -77,48 +136,59 @@
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='img/educacionfisica.jpeg') }}">
+      <img src="{{ url_for('static', filename='img/educacionfisica.png') }}">
       <h3>Educación física y deporte</h3>
-      <p>Aprende sobre los deportes y ejercicios físicos de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando sobre la metodología o enfoque HELE:</p>
+      <p>Aprende sobre los deportes y ejercicios físicos de forma autónoma y didáctica, mirando, escribiendo,
+        precticando y jugando</p>
       <ul>
-        <li><b>Fútbol:</b>
-          .
+        <li>
+          <b>Fútbol</b>
         </li>
-        <li><b>Basquetball:</b>
-          .
+        <li>
+          <b>Basquetball</b>
         </li>
-        <li><b>Voleyball:</b>
-          .
+        <li>
+          <b>Voleybal:</b>
         </li>
-        <li><b>Ciclismo:</b>
-          .
+        <li>
+          <b>Ciclismo</b>
         </li>
-        <li><b>Caminata o senderísmo:</b>
+        <li>
+          <b>Atletísmo, caminata o senderísmo</b>
       </ul>
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='img/etica.jpeg') }}">
+      <img src="{{ url_for('static', filename='img/etica.png') }}">
       <h3>Ética y valores</h3>
-      <p>Aprende sobre laa ética y los valores de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando sobre la metodología o enfoque HELE:</p>
+      <p>Aprende sobre la ética y los valores de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando
+      </p>
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='img/programacion.jpeg') }}">
+      <img src="{{ url_for('static', filename='img/programacion.png') }}">
       <h3>Programación Básica</h3>
-      <p>Aprende sobre los diferentes lenguajes de programación, lógica de progración básica, operadores lógicos y aritméticos de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando sobre la metodología o enfoque HELE:</p>
+      <p>Aprende sobre los diferentes lenguajes de programación, lógica de progración básica, operadores lógicos y
+        aritméticos de forma autónoma y didáctica, mirando, escribiendo, precticando y jugando</p>
       <ul>
-        <li><b>Lenguajes de programación:</b>
-          .
+        <li>
+          <b>Lenguajes de programación:</b>
         </li>
-        <li><b>Lógica de programación:</b>
-          .
+        <li>
+          <b>Lógica de programación:</b>
         </li>
-        <li><b>Operadores lógicos:</b>
-          .
+        <li>
+          <b>Operadores lógicos:</b>
+          AND (Y lógico - && o and): Retorna true solo si ambas expresiones son verdaderas.OR (O lógico - || o or):
+          Retorna true si al menos una de las expresiones es verdadera.NOT (Negación - ! o not): Invierte el valor
+          lógico; si es verdadero, lo convierte en falso y viceversa.
         </li>
-        <li><b>Operadores aritméticos:</b>
-          AND (Y lógico - && o and): Retorna true solo si ambas expresiones son verdaderas.OR (O lógico - || o or): Retorna true si al menos una de las expresiones es verdadera.NOT (Negación - ! o not): Invierte el valor lógico; si es verdadero, lo convierte en falso y viceversa.
+        <li>
+          <b>Operadores aritméticos:</b>
+          Los operadores aritméticos son símbolos fundamentales en programación y matemáticas que permiten realizar
+          cálculos básicos (suma +, resta -, multiplicación *, división /) sobre datos numéricos o variables.
+          Generalmente incluyen operadores adicionales como el módulo % (resto de la división) y la potenciación,
+          siguiendo reglas de precedencia (paréntesis, potencias, multiplicación/división, suma/resta)
         </li>
       </ul>
     </div>
@@ -132,21 +202,57 @@
 
   <div class="card-container">
     <div class="card">
-      <h3>🌍 Ecológico</h3>
-      <p>Reduce la contaminación y protege el planeta.</p>
+      <img src="{{ url_for('static', filename='img/dinosaurio2.png') }}">
+      <h3>🎯 Mejora la motivación y el compromiso</h3>
+      <p><b>Aprender es divertido:</b></p>
+      <ul>
+        <li>
+          Los juegos despiertan el interés de los niños, manteniéndolos concentrados durante más tiempo.
+        </li>
+      </ul>
+      <p><b>Superar desafíos:</b></p>
+      <ul>
+        <li>
+          Los juegos con recompensas y niveles fomentan el esfuerzo y la perseverancia.
+        </li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>💰 Económico</h3>
-      <p>Ahorro a largo plazo en consumo energético.</p>
+      <img src="{{ url_for('static', filename='img/dinosaurio.png') }}">
+      <h3>🧠 Desarrollo de habilidades cognitivas</h3>
+      <p><b>Memoria y concentración:</b></p>
+      <ul>
+        <li>
+          Actividades como juegos de memoria mejoran la capacidad de atención y retención.
+        </li>
+      </ul>
+      <p><b>Aprendizaje de conceptos básicos: </b></p>
+      <ul>
+        <li>
+          Los juegos educativos ayudan a comprender colores, números, letras y formas.
+        </li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>♻️ Sostenible</h3>
-      <p>Recursos naturales inagotables.</p>
+      <img src="{{ url_for('static', filename='img/educacionfisica.png') }}">
+      <h3>🎭🤸‍♂️ Fomento de habilidades sociales y emocionales</h3>
+      <p><b>Gestión de emociones:</b></p>
+      <ul>
+        <li>
+          Los niños aprenden a manejar la frustración, la paciencia y la empatía.
+        </li>
+      </ul>
+      <p><b>Construcción de confianza:</b></p>
+      <ul>
+        <li>
+          Ganar o completar un juego refuerza la autoestima de los pequeños.
+        </li>
+      </ul>
+
     </div>
   </div>
 </section>
 
 {% endblock %}
- 

@@ -11,7 +11,7 @@
     }
     body {
   font-family: Arial, sans-serif;
-  background: #CADB4D;
+  background: #CADB4D !important;
   margin: 0;
 }
 
@@ -111,23 +111,32 @@ margin-bottom: 15px;
   text-decoration: underline;
 }
 
+/* CAROUSEL - Ajuste de altura opcional para que no sea gigante */
+.carousel-item img {
+  height: 400px; /* Altura fija para que sea estético */
+  object-fit: cover; /* Evita que la imagen se estire */
+  border-radius: 15px; /* Opcional: bordes redondeados */
+}
 
 /* HERO */
 .hero {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   padding: 60px;
   gap: 40px;
+  text-align: center; /* Centra el h1, p y el botón, el contenido horizontalmente */
 }
 
 .hero-text {
-  max-width: 500px;
+  max-width: 700px; /* Un poco más ancho para que luzca mejor centrado */
+  margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #198754;
+  margin-bottom: 15px;
 }
 
 .hero p {
@@ -135,18 +144,22 @@ margin-bottom: 15px;
   font-size: 1.2rem;
 }
 
-.hero-img img {
-  width: 400px;
-  animation: float 3s ease-in-out infinite;
-}
-
 /* BOTÓN */
 .btn {
-  background: #198754;
-  color: white;
-  padding: 12px 20px;
+  background: #198754 !important;
+  color: white !important;
+  padding: 12px 25px;
   border-radius: 8px;
   text-decoration: none;
+  display: inline-block; /* Importante para que respete el centrado del texto y funcione bien */
+  font-weight: bold;
+  transition: transform 0.2s;
+  /* transition: background 0.3s ease; */
+}
+
+.btn:hover {
+  background: #146c43; /* Un tono más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
 }
 
 /* CARDS */
@@ -157,7 +170,7 @@ margin-bottom: 15px;
 
 .card-container {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -177,6 +190,9 @@ margin-bottom: 15px;
 
 .card img {
   width: 100%;
+  height: 250px;       /* Define aquí la altura fija que desees */
+  object-fit: contain; /* Muestra la imagen completa */     
+  /* object-fit: cover; */ /* Recorta la imagen para que llene el espacio sin deformarse */
   border-radius: 10px;
 }
 

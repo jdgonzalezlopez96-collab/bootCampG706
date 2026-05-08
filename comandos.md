@@ -16,7 +16,7 @@
 
 `Set-ExecutionPolicy Unrestricted` -> Se debe ejecutar dentro del powershell como administrador y sirve para habilitar ejecución de comandos
 
-``Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`` -> Se debe ejecutar dentro del powershell como administrador y sirve para habilitar ejecución de comandos cuando arroja error en el powershell
+``Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`` -> Se debe ejecutar dentro del powershell como administrador y sirve para habilitar ejecución de comandos cuando arroja error en el powershell con el comando anterior
 
 `dir` -> consultar el directorio donde estoy ubicado y el directorio próximo
 

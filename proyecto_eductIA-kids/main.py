@@ -20,9 +20,9 @@ def beneficios():
 def contacto():
     return render_template('contacto.html')
 
-@app.route('/energia')
-def energia():
-    return render_template('energia.html')
+@app.route('/aprendizaje')
+def aprendizaje():
+    return render_template('aprendizaje.html')
 
 @app.route('/mapa')
 def mapa():
