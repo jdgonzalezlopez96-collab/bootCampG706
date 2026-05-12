@@ -6,7 +6,7 @@
 
 
 <!-- CAROUSEL -->
-<div id="carouselExampleDark" class="carousel carousel-dark slide  mt-4 mb-5" data-bs-ride="carousel">
+<!-- <div id="carouselExampleDark" class="carousel carousel-dark slide  mt-4 mb-5" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
       aria-label="Slide 1"></button>
@@ -18,29 +18,21 @@
     <div class="carousel-item active" data-bs-interval="3000">
       <img src="../static/img/interactivo1.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p> -->
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
       <img src="../static/img/interactivo2.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p> -->
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
       <img src="../static/img/interactivo3.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p> -->
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
       <img src="../static/img/interactivo5.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>fourth slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p> -->
       </div>
     </div>
   </div>
@@ -52,27 +44,107 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div> -->
+
+<!-- CAROUSEL MEJORADO -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide mt-4 mb-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <!-- Slide 1: Matemáticas -->
+    <div class="carousel-item active" data-bs-interval="3000">
+      <a href="/aprendizaje">
+        <img src="../static/img/interactivo1.png" class="d-block w-100" alt="Matemáticas">
+        <div class="carousel-caption custom-caption">
+          <h5>¡Mundo de Números! 🔢</h5>
+          <p>Haz clic para jugar con las matemáticas.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Slide 2: Animales -->
+    <div class="carousel-item" data-bs-interval="3000">
+      <a href="/identificar">
+        <img src="../static/img/interactivo2.png" class="d-block w-100" alt="Animales">
+        <div class="carousel-caption custom-caption">
+          <h5>Laboratorio de Animales 🐶</h5>
+          <p>¿Qué animal es este? ¡Descúbrelo aquí!</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Slide 3: Inglés -->
+    <div class="carousel-item" data-bs-interval="3000">
+      <a href="/aprendizaje">
+        <img src="../static/img/interactivo3.png" class="d-block w-100" alt="Inglés">
+        <div class="carousel-caption custom-caption">
+          <h5>Hello Friends! 🆗🧠👩‍🏫</h5>
+          <p>Aprende palabras nuevas en inglés.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Slide 4: General -->
+    <div class="carousel-item" data-bs-interval="3000">
+      <a href="/aprendizaje">
+        <img src="../static/img/interactivo5.png" class="d-block w-100" alt="Explora">
+        <div class="carousel-caption custom-caption">
+          <h5>¡Explora Todo! 🚀</h5>
+          <p>Mira todos los módulos que tenemos para ti.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Controles con flechas más grandes -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon p-4 bg-primary rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon p-4 bg-primary rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<!-- <section class="hero">
   <div class="hero-text">
     <h1> 👨‍🏫👩‍🏫🎓 EducatIA kids 👨‍🏫👩‍🏫🎓 </h1>
     <p>Desarrollamos y aplicamos el aprendizaje que tú niño/a necesita.</p>
     <a href="/aprendizaje" class="btn">Explora tú aprendizaje</a>
   </div>
+</section> -->
 
-  <!-- <div class="hero-img">
-    <img src="{{ url_for('static', filename='img/energia.jpeg') }}">
-  </div> -->
+<!-- HERO MEJORADO -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="hero-badge">✨ ¡Bienvenido a la aventura!</div>
+      <h1>EducatIA kids</h1>
+      <p>Explora, juega y aprende con el mejor compañero de clases. ¡El aprendizaje que tú necesitas de una forma súper divertida! 🚀</p>
+      <div class="hero-btns">
+        <a href="/aprendizaje" class="btn-hero-primary">¡Empezar a Aprender!</a>
+        <a href="#modulos" class="btn-hero-secondary">Ver Módulos</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Aquí puedes poner una imagen de un robot amigable o un niño estudiando -->
+      <img src="{{ url_for('static', filename='img/interactivo5.png') }}" alt="Niño aprendiendo" class="floating">
+    </div>
+  </div>
 </section>
 
 <!-- SERVICIOS -->
-<section class="cards">
+<!-- <section class="cards">
   <h2>🎓 Módulos de Aprendizaje </h2>
-
   <div class="card-container row row-cols-1 row-cols-md-3 g-6">
-    <!--  <div class="row row-cols-1 row-cols-md-3 g-6"> -->
     <div class="card">
       <img src="{{ url_for('static', filename='img/matematicas.png') }}">
       <h3>➕➖✖➗ Matemáticas Básicas </h3>
@@ -191,6 +263,69 @@
           siguiendo reglas de precedencia (paréntesis, potencias, multiplicación/división, suma/resta)
         </li>
       </ul>
+    </div>
+
+  </div>
+</section> -->
+
+<!-- MÓDULOS DE APRENDIZAJE -->
+<section id="modulos" class="cards">
+  <h2 class="section-title">🎓 Módulos de Aprendizaje</h2>
+
+  <div class="card-container"> <!-- Eliminamos las clases de Bootstrap row-cols para usar nuestro gap -->
+
+    <div class="card card-amarillo">
+      <img src="{{ url_for('static', filename='img/matematicas.png') }}">
+      <h3>➕ Matemáticas</h3>
+      <p>¡Los números te esperan! Aprende a contar y jugar con números mágicos de forma muy fácil.</p>
+      <ul class="card-list">
+        <li>Números divertidos</li>
+        <li>Sumas y restas</li>
+      </ul>
+      <a href="/aprendizaje/matematicas" class="btn-entrar">¡Jugar Ahora!</a>
+    </div>
+
+    <div class="card card-azul">
+      <img src="{{ url_for('static', filename='img/ingles.png') }}">
+      <h3>👩‍🏫🆗🧠 Inglés Básico</h3>
+      <p>¡Habla un nuevo idioma! Colores, animales y muchas palabras nuevas.</p>
+      <ul class="card-list">
+        <li>Colores y números</li>
+        <li>Mi familia</li>
+      </ul>
+      <a href="/aprendizaje/ingles" class="btn-entrar">¡Jugar Ahora!</a>
+    </div>
+
+    <div class="card card-rojo">
+      <img src="{{ url_for('static', filename='img/español.png') }}">
+      <h3>📖 Español</h3>
+      <p>Aprende a leer y escribir historias increíbles con nosotros.</p>
+      <ul class="card-list">
+        <li>Hablar y escuchar</li>
+        <li>Leer y escribir</li>
+      </ul>
+      <a href="/aprendizaje/espanol" class="btn-entrar">¡Jugar Ahora!</a>
+    </div>
+
+    <div class="card card-verde">
+      <img src="{{ url_for('static', filename='img/educacionfisica.png') }}">
+      <h3>⚽ Deporte</h3>
+      <p>¡Mueve tu cuerpo! Aprende sobre fútbol, básquet y mucho más.</p>
+      <a href="/aprendizaje/deporte" class="btn-entrar">¡Jugar Ahora!</a>
+    </div>
+
+    <div class="card card-morado">
+      <img src="{{ url_for('static', filename='img/etica.png') }}">
+      <h3>❤️ Ética y Valores</h3>
+      <p>Aprende a ser un superhéroe del corazón y buen amigo.</p>
+      <a href="/aprendizaje/etica" class="btn-entrar">¡Jugar Ahora!</a>
+    </div>
+
+    <div class="card card-cyan">
+      <img src="{{ url_for('static', filename='img/programacion.png') }}">
+      <h3>💻 Programación</h3>
+      <p>Crea tus propios juegos y aprende el lenguaje de las máquinas.</p>
+      <a href="/aprendizaje/programacion" class="btn-entrar">¡Jugar Ahora!</a>
     </div>
 
   </div>

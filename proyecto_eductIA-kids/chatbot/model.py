@@ -66,3 +66,12 @@ def predict_answer(model, vectorizer, unique_answers, user_text):
     x = vectorizer.transform([user_text])
     label = model.predict(x)[0]
     return unique_answers[label]
+
+# Intentamos cargar el modelo automáticamente al importar el módulo
+model, vectorizer, unique_answers = load_model()
+
+# Si no existe (primera vez), podemos importar los datos y entrenarlo aquí mismo
+if model is None:
+    from chatbot.data import training_data
+    print("Iniciando entrenamiento automático...")
+    model, vectorizer, unique_answers = build_and_train_model(training_data)

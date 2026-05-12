@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="modulo-detail">
+  <div class="container">
+    <div class="detail-header">
+      <a href="/" class="btn-back">⬅ Volver</a>
+      <h1>Misión: {{ info.titulo }} 🚀</h1>
+      <p>Supera los niveles para ganar estrellas y convertirte en un experto.</p>
+    </div>
+
+    <!-- MAPA DE NIVELES -->
+    <div class="map-container">
+      
+      <!-- NIVEL 1 -->
+      <div class="level-node active">
+        <div class="level-icon">1</div>
+        <div class="level-content">
+          <h3>Nivel Básico: Exploradores</h3>
+          <p>Tipo de juego: Rompecabezas 🧩</p>
+          <button class="btn-play" onclick="abrirJuego('{{ info.juego1 }}')">¡Jugar Nivel 1!</button>
+        </div>
+      </div>
+
+      <div class="map-line"></div>
+
+      <!-- NIVEL 2 -->
+      <div class="level-node">
+        <div class="level-icon">2</div>
+        <div class="level-content">
+          <h3>Nivel Medio: Valientes</h3>
+          <p>Tipo de juego: Trivia Veloz ⚡</p>
+          <button class="btn-play" onclick="abrirJuego('{{ info.juego2 }}')">¡Jugar Nivel 2!</button>
+        </div>
+      </div>
+
+      <div class="map-line"></div>
+
+      <!-- NIVEL 3 (Bloqueado o Final) -->
+      <div class="level-node locked">
+        <div class="level-icon">3</div>
+        <div class="level-content">
+          <h3>Nivel Pro: Maestros</h3>
+          <p>Tipo de juego: Desafío Final 🏆</p>
+          <button class="btn-play" disabled>¡Próximamente!</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Reutilizamos el modal de juegos que hicimos antes -->
+<div id="gameModal" class="game-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title">🕹️ Misión en curso...</span>
+      <button class="close-game" onclick="cerrarJuego()">✖ Salir</button>
+    </div>
+    <div class="modal-body">
+      <iframe id="gameFrame" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

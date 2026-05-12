@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Identificador de Animales - EducatIA{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>🐾 Laboratorio de Identificación 🐾</h1>
+    
+    <!-- Zona de instrucciones del Chatbot -->
+    <div id="instrucciones-ia" class="alert alert-info mb-4" style="border-radius: 20px;">
+        <img src="{{ url_for('static', filename='img/bot-avatar.png') }}" width="50">
+        <strong>Chatbot dice:</strong> "¡Bienvenido! En esta parte debes cargar, subir o arrastrar y soltar una imagen de un animal para que yo pueda identificarlo y decirte si es de hogar o de granja."
+    </div>
+
+    <!-- Zona de Drop (Arrastrar y soltar) -->
+    <div id="drop-zone" style="border: 3px dashed #4CAF50; padding: 40px; border-radius: 20px; background: #f9f9f9; cursor: pointer;">
+        <p>Arrastra tu foto aquí o haz clic para buscarla</p>
+        <input type="file" id="file-input" accept="image/*" style="display: none;">
+        <img id="preview" src="#" style="display:none; max-width: 200px; margin-top: 10px; border-radius: 10px;">
+    </div>
+
+    <!-- Resultado -->
+    <div id="resultado-ia" class="mt-4" style="font-size: 1.5rem; font-weight: bold; color: #2e7d32;">
+        <!-- Aquí aparecerá el resultado de TensorFlow -->
+    </div>
+</div>
+
+<script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const resultadoDiv = document.getElementById('resultado-ia');
+    const preview = document.getElementById('preview');
+
+    // Click para abrir selector de archivos
+    dropZone.onclick = () => fileInput.click();
+
+    // Eventos de arrastrar y soltar
+    dropZone.onsubmit = (e) => e.preventDefault();
+    dropZone.ondragover = (e) => { e.preventDefault(); dropZone.style.background = "#e8f5e9"; };
+    dropZone.ondragleave = () => { dropZone.style.background = "#f9f9f9"; };
+
+    dropZone.ondrop = (e) => {
+        e.preventDefault();
+        const file = e.dataTransfer.files[0];
+        handleFile(file);
+    };
+
+    fileInput.onchange = (e) => {
+        const file = e.target.files[0];
+        handleFile(file);
+    };
+
+    function handleFile(file) {
+        if (!file) return;
+        
+        // Mostrar vista previa
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            preview.src = e.target.result;
+            preview.style.display = "inline-block";
+        }
+        reader.readAsDataURL(file);
+
+        // Enviar al servidor
+        const formData = new FormData();
+        formData.append('file', file);
+
+        resultadoDiv.innerHTML = "Analizando... 🤔";
+
+        fetch('/predict_animal', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            resultadoDiv.innerHTML = `🌟 ${data.prediction}`;
+        })
+        .catch(err => {
+            resultadoDiv.innerHTML = "¡Ups! No pude reconocerlo. Intenta con otra foto.";
+        });
+    }
+</script>
+{% endblock %}
